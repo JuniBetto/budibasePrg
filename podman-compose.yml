@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  budibase:
+    container_name: budibase-local
+    image: docker.io/budibase/budibase:latest
+    ports:
+      - "10000:80"
+    environment:
+      INTERNAL_API_KEY: ${INTERNAL_API_KEY}
+      JWT_SECRET: ${JWT_SECRET}
+      MINIO_ACCESS_KEY: ${MINIO_ACCESS_KEY}
+      MINIO_SECRET_KEY: ${MINIO_SECRET_KEY}
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+      COUCHDB_USER: ${COUCHDB_USER}
+      COUCHDB_PASSWORD: ${COUCHDB_PASSWORD}
+      BUDIBASE_PUBLIC_SIGNUP_ENABLED: ${BUDIBASE_PUBLIC_SIGNUP_ENABLED}
+      BUDIBASE_SELF_HOSTED: ${BUDIBASE_SELF_HOSTED}
+    volumes:
+      - ./volumes/budibase-data:/data
+    restart: unless-stopped
