@@ -4,6 +4,7 @@
 # Ma includi il file di compose
 !podman-compose.yml
 !.gitignore
+
 # Includi solo la directory del volume e il suo contenuto
 !volumes/
 !volumes/budibase-data/
