@@ -1,0 +1,13 @@
+# Ignora tutto
+*
+
+# Ma includi il file di compose
+!podman-compose.yml
+!.gitignore
+# Includi solo la directory del volume e il suo contenuto
+!volumes/
+!volumes/budibase-data/
+!volumes/budibase-data/**
+
+# Se vuoi includere anche lo script di avvio (opzionale)
+#!setup.sh
